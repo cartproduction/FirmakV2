@@ -1,6 +1,10 @@
 package com.application.firmak.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +12,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -20,6 +25,7 @@ import android.widget.TextView;
 import com.application.firmak.ApplicationClass;
 import com.application.firmak.CirclePageIndicator;
 import com.application.firmak.R;
+import com.appus.splash.Splash;
 
 
 public class SplashActivity extends AppCompatActivity{
@@ -38,6 +44,21 @@ public class SplashActivity extends AppCompatActivity{
         login = (Button) findViewById(R.id.login);
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        ApplicationClass.width = size.x;
+        ApplicationClass.height = size.y;
+        Drawable drawable = getResources().getDrawable(R.drawable.fimaklogoweb);
+        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+        Drawable newDrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, ApplicationClass.width/2, ApplicationClass.width/2, true));
+
+        Splash.Builder splash = new Splash.Builder(this, getSupportActionBar());
+        splash.setBackgroundColor(getResources().getColor(R.color.white));
+        splash.setSplashImageColor(getResources().getColor(R.color.colorAccent));
+        splash.setSplashImage(newDrawable);
+        splash.perform();
 
         titleView = (TextView) findViewById(R.id.landing_txt_title);
         hintView = (TextView) findViewById(R.id.landing_txt_hint);
@@ -54,6 +75,8 @@ public class SplashActivity extends AppCompatActivity{
                 startActivity(myIntent);
             }
         });
+
+
 
         viewPager = (ViewPager) findViewById(R.id.pager);
 
@@ -90,6 +113,8 @@ public class SplashActivity extends AppCompatActivity{
 
         CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(viewPager);
+
+
 
     }
 

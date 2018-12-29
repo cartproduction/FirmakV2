@@ -2,6 +2,7 @@ package com.application.firmak.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.text.style.StrikethroughSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.application.firmak.models.ProductItem
 import com.application.firmak.R
+import com.application.firmak.span
 import com.daimajia.swipe.SwipeLayout
 import com.nineoldandroids.view.ViewHelper
 import com.squareup.picasso.Picasso
@@ -26,12 +28,16 @@ class ProductRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, 
 
     override fun onBindViewHolder(holder: GroceryViewHolder, position: Int) {
 
-        Picasso.with(context).load(horizontalGrocderyList[position].profilePictureUrl!!).into(holder.productimage);
-        Picasso.with(context).load(horizontalGrocderyList[position].color!!).into(holder.color);
+        Picasso.with(context).load(horizontalGrocderyList[position].profilePictureUrl!!).into(holder.productimage)
+        Picasso.with(context).load(horizontalGrocderyList[position].color!!).into(holder.color)
         holder.title.setText(horizontalGrocderyList[position].name)
         holder.description.setText(horizontalGrocderyList[position].description)
         holder.date.setText(horizontalGrocderyList[position].date)
+        val span = span {
+            strikethrough { +horizontalGrocderyList[position].date!! }
 
+        }
+        holder.date.setText(span.build())
         holder.sample1.setShowMode(SwipeLayout.ShowMode.PullOut)
         val starBottView = holder.sample1.starbott
         //holder.sample1.addDrag(SwipeLayout.DragEdge.Left, holder.sample1.bottom_wrapper)
