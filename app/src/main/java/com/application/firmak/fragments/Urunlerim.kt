@@ -16,6 +16,10 @@ import kotlinx.android.synthetic.main.urunlerim.*
 import com.application.firmak.adapters.ProductRecyclerViewAdapter
 import com.application.firmak.adapters.TeslimEdilecekProductRecyclerViewAdapter
 import com.application.firmak.models.ProductItem
+import com.squareup.picasso.Picasso
+import iammert.com.expandablelib.ExpandCollapseListener
+
+
 
 
 class Urunlerim: Fragment() {
@@ -41,13 +45,19 @@ class Urunlerim: Fragment() {
     private fun initExpandableLayouts() {
         teslimedilecekexp.setRenderer(object : ExpandableLayout.Renderer<String, String> {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
-                view.imageView12.setImageResource(if (isExpanded) R.mipmap.ic_launcher else R.mipmap.ic_launcher)
+
+                view.tvParent.setText(R.string.teslimedilecek)
+                Picasso.with(context).load(R.mipmap.timeicon).into(view.imageView11)
+                if(isExpanded)
+                    Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
+                else
+                    Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
             }
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {
 
-                val item1 = ProductItem("Estone 300", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "1X129,00 TL", R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                val item2 = ProductItem("Rokon", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "1X65,00 TL", R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item1 = ProductItem("Estone 300", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.estone, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item2 = ProductItem("Rokon", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.rokon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                 teslimEdilecekproductArray.clear()
                 teslimEdilecekproductArray.add(item1)
                 teslimEdilecekproductArray.add(item2)
@@ -58,6 +68,15 @@ class Urunlerim: Fragment() {
                 view.teslimedilecek.layoutManager = gridLayoutManager
                 view.teslimedilecek.adapter = teslimEdilecekproductAdapter
             }
+        })
+
+        teslimedilecekexp.setExpandListener(ExpandCollapseListener.ExpandListener<Any> { parentIndex, parent, view ->
+            Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
+
+        })
+
+        teslimedilecekexp.setCollapseListener(ExpandCollapseListener.CollapseListener<Any> { parentIndex, parent, view ->
+            Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
         })
 
         val teslimatsection = Section<String, String>()
@@ -74,8 +93,8 @@ class Urunlerim: Fragment() {
 
     private fun initProductRecycleView() {
 
-        val item1 = ProductItem("V Yaka Uzun Elbise", "18YOX-POLASBISE", "1X129,00 TL", R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-        val item2 = ProductItem("V Yaka Gömlek", "18YOX-POLASBISE", "1X65,00 TL", R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+        val item1 = ProductItem("Estone 300", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.estone, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+        val item2 = ProductItem("Rokon", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.rokon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
         productArray.clear()
         productArray.add(item1)
         productArray.add(item2)

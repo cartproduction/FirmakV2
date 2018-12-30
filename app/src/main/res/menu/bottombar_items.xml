@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_item1"
-        android:icon="@drawable/home"
+        android:icon="@mipmap/products"
         android:title="@string/menu_item1"/>
     <item
         android:id="@+id/menu_item2"
-        android:icon="@drawable/search"
+        android:icon="@mipmap/orders"
         android:title="@string/menu_item2"/>
     <item
         android:id="@+id/menu_item3"
-        android:icon="@drawable/play"
+        android:icon="@mipmap/offers"
         android:title="@string/menu_item3"/>
     <item
         android:id="@+id/menu_item4"
-        android:icon="@drawable/favorite"
+        android:icon="@mipmap/messages"
         android:title="@string/menu_item4"/>
     <item
         android:id="@+id/menu_item5"
-        android:icon="@drawable/user"
+        android:icon="@mipmap/menudots"
         android:title="@string/menu_item5"/>
 </menu>

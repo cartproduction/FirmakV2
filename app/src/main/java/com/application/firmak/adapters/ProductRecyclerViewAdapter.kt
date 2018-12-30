@@ -29,7 +29,6 @@ class ProductRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, 
     override fun onBindViewHolder(holder: GroceryViewHolder, position: Int) {
 
         Picasso.with(context).load(horizontalGrocderyList[position].profilePictureUrl!!).into(holder.productimage)
-        Picasso.with(context).load(horizontalGrocderyList[position].color!!).into(holder.color)
         holder.title.setText(horizontalGrocderyList[position].name)
         holder.description.setText(horizontalGrocderyList[position].description)
         holder.date.setText(horizontalGrocderyList[position].date)
@@ -67,7 +66,6 @@ class ProductRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, 
 
     inner class GroceryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         internal var productimage: ImageView
-        internal var color: ImageView
         internal var title: TextView
         internal var description: TextView
         internal var date: TextView
@@ -77,7 +75,6 @@ class ProductRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, 
             description = view.textView4
             date = view.textView14
             productimage = view.imageView
-            color = view.imageView13
             sample1 = view.sample1
         }
     }

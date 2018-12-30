@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ed1b25</color>
     <color name="badge">#f89406</color>
+    <color name="steel">#8e8e93</color>
 
     <!-- MaterialDrawer DEFAULT DARK drawer colors -->
     <color name="material_drawer_dark_selected">#202020</color>

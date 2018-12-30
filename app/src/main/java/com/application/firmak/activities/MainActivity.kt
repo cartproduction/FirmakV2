@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.selectedItemId = R.id.menu_item3
     BottomNavigationViewHelper.addBadge(bottomNavigationView, this, 3)
-
+    BottomNavigationViewHelper.sizeIcon(bottomNavigationView,getResources().getDisplayMetrics(),50f)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
             if(bottomNavigationView.selectedItemId != item.itemId) {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         selectedFragment = Fragment4()
                         BottomNavigationViewHelper.removeBadge(bottomNavigationView, this, 3)
                     }
-                    R.id.menu_item5 -> selectedFragment = Fragment5()
+                    R.id.menu_item5 -> selectedFragment = Menu()
                 }
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.framelayout, selectedFragment)
