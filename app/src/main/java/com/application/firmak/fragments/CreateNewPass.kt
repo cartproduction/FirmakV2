@@ -11,39 +11,40 @@ import android.view.inputmethod.InputMethodManager
 import com.application.firmak.FimakApp.Companion.addFragment
 import com.application.firmak.activities.MainActivity
 import com.application.firmak.R
-import kotlinx.android.synthetic.main.fragment_log.*
+import kotlinx.android.synthetic.main.fragment_createnewpass.*
 
 //1
-class Login : Fragment() {
+class CreateNewPass : Fragment() {
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     // Inflate the layout for this fragment
 
 
-    return inflater.inflate(R.layout.fragment_log, container, false)
+    return inflater.inflate(R.layout.fragment_createnewpass, container, false)
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     btnSignIn.setOnClickListener(View.OnClickListener {
-      val Email = loginEmail.text.toString()
-      val Password = loginPass.text.toString()
+      val newPassword = loginPass.text.toString()
+      val confirmPassword = loginPassConfirm.text.toString()
 
-      if (Email.isEmpty()) {
-        inputEmail.error = requireActivity().resources.getString(R.string.emailbos)
-        loginEmail.requestFocus()
-        return@OnClickListener
-      }
-
-      if (Password.isEmpty()) {
+      if (newPassword.isEmpty()) {
         inputPass.error = requireActivity().resources.getString(R.string.sifrebos)
         loginPass.requestFocus()
         return@OnClickListener
       }
 
+      if (confirmPassword.isEmpty()) {
+        inputPassConfirm.error = requireActivity().resources.getString(R.string.sifrebos)
+        loginPassConfirm.requestFocus()
+        return@OnClickListener
+      }
+
+
       val im = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
-      im?.hideSoftInputFromWindow(loginEmail.windowToken, InputMethodManager.RESULT_UNCHANGED_SHOWN)
+      im?.hideSoftInputFromWindow(loginPass.windowToken, InputMethodManager.RESULT_UNCHANGED_SHOWN)
       if (true) {
-        val i = Intent(requireContext(), MainActivity::class.java)
+        val i = Intent(requireActivity().getBaseContext(), MainActivity::class.java)
         requireActivity().startActivity(i)
         requireActivity().finish()
       }
@@ -51,17 +52,11 @@ class Login : Fragment() {
 
     kayit.setOnClickListener(View.OnClickListener {
 
-      addFragment(requireFragmentManager(),Register(), true, "Register")
+      val i = Intent(requireContext(), MainActivity::class.java)
+      requireActivity().startActivity(i)
+      requireActivity().finish()
 
     })
-
-    sifremiunuttum.setOnClickListener(View.OnClickListener {
-
-      addFragment(requireFragmentManager(),ForgotPassRequest(), true, "ForgotPassReq")
-
-    })
-
   }
-
 
 }

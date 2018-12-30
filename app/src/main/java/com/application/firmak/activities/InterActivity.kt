@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.application.firmak.R
 import com.application.firmak.fragments.Login
 
-class LoginActivity : AppCompatActivity() {
+class InterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

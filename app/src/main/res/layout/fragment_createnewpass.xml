@@ -33,89 +33,79 @@
             android:id="@+id/landing_txt_tit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/inputPass"
+            android:layout_alignLeft="@+id/inputPass"
             android:layout_marginBottom="10dp"
             android:layout_alignParentTop="true"
-            android:text="@string/giris"
+            android:text="@string/yenisifre"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/material_drawer_dark_selected"
             android:textStyle="bold" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/inputEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/landing_txt_tit"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
-
-        <EditText
-            android:id="@+id/loginEmail"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="E-posta"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColorHint="@color/white" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_below="@+id/landing_txt_tit"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/badge">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/inputPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputEmail"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/badge">
+            <EditText
+                android:id="@+id/loginPass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                android:hint="@string/yenisifrenew"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColorHint="@color/white" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/loginPass"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputPassConfirm"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:hint="Şifre***"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColorHint="@color/white" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputPass"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/badge">
+
+            <EditText
+                android:id="@+id/loginPassConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                android:hint="@string/yenisifrecon"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColorHint="@color/white" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btnSignIn"
             android:layout_width="354dp"
             android:layout_height="38dp"
-            android:layout_below="@+id/inputPass"
+            android:layout_below="@+id/inputPassConfirm"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="9dp"
             android:layout_marginBottom="15dp"
             android:background="@color/colorAccent"
-            android:text="@string/login"
+            android:text="@string/yenisifresave"
             android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/sifremiunuttum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnSignIn"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/sifremiunuttum"
-            android:textColor="@color/colorAccent"
-            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/eger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sifremiunuttum"
+            android:layout_below="@+id/btnSignIn"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="5dp"
-            android:text="@string/eger"
+            android:text="@string/eger2"
             android:textColor="@color/developed_by_regis_backgraund"
             android:textSize="10sp" />
 
@@ -127,7 +117,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
-            android:text="@string/kayitol"
+            android:text="@string/girisyapin"
             android:textColor="@color/colorAccent"
             android:textSize="10sp"
             android:textStyle="bold" />

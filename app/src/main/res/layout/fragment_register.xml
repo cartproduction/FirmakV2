@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.7">
 
         <ImageView
             android:id="@+id/logo"
@@ -27,7 +27,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1.3">
 
         <TextView
             android:id="@+id/landing_txt_tit"
@@ -36,16 +36,54 @@
             android:layout_alignStart="@+id/inputPass"
             android:layout_marginBottom="10dp"
             android:layout_alignParentTop="true"
-            android:text="@string/giris"
+            android:text="@string/kayit"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/material_drawer_dark_selected"
             android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/landing_txt_tit"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <EditText
+                android:id="@+id/loginad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Ad"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColorHint="@color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputSoyad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputad"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <EditText
+                android:id="@+id/loginSoyad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Soyad"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColorHint="@color/white" />
+        </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/inputEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/landing_txt_tit"
+        android:layout_below="@+id/inputSoyad"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
@@ -92,30 +130,18 @@
             android:layout_marginTop="9dp"
             android:layout_marginBottom="15dp"
             android:background="@color/colorAccent"
-            android:text="@string/login"
+            android:text="@string/kayit"
             android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/sifremiunuttum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnSignIn"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/sifremiunuttum"
-            android:textColor="@color/colorAccent"
-            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/eger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sifremiunuttum"
+            android:layout_below="@id/btnSignIn"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/eger"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/eger2"
             android:textColor="@color/developed_by_regis_backgraund"
             android:textSize="10sp" />
 
@@ -125,9 +151,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/eger"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/kayitol"
+            android:text="@string/girisyapin"
             android:textColor="@color/colorAccent"
             android:textSize="10sp"
             android:textStyle="bold" />

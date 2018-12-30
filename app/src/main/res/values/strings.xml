@@ -7,12 +7,28 @@
     <string name="menu_item5">Profile</string>
 
     <string name="giris">Giriş Yap</string>
+    <string name="kayit">Kayıt Ol</string>
+    <string name="kayitlieposta">Kayıtlı E-posta Adresiniz</string>
+    <string name="epostakod">E-posta Kodunuzu Giriniz</string>
     <string name="sifremiunuttum">Şifemi Unuttum</string>
     <string name="eger">Eğer bir hesabınız yoksa</string>
+    <string name="eger2">Eğer bir hesabınız varsa</string>
     <string name="kayitol">Kayıt Olun</string>
-
+    <string name="girisyapin">Giriş Yapın</string>
     <string name="hadibaslayalim">Hadi Baslayalım...</string>
     <string name="login">Giriş</string>
+    <string name="forgotpass">Şifremi Unuttum</string>
+    <string name="confirm">Devam</string>
+    <string name="adbos">Ad boş olamaz</string>
+    <string name="soyadbos">Soyad boş olamaz</string>
+    <string name="emailbos">Email boş olamaz</string>
+    <string name="sifrebos">Şifrenizi giriniz</string>
+    <string name="kodbos">Kodu giriniz</string>
+
+    <string name="yenisifre">Yeni Şifre Oluşturun</string>
+    <string name="yenisifrenew">Yeni Şifre ***</string>
+    <string name="yenisifrecon">Yeni Şifre Tekrar ***</string>
+    <string name="yenisifresave">Yeni Şifre Kaydet</string>
     <string name="splashheader1">Onboarding Title 1</string>
     <string name="splashheader2">Onboarding Title 2</string>
     <string name="splashheader3">Onboarding Title 3</string>
