@@ -6,6 +6,12 @@
     <string name="menu_item4">Mesajlarım</string>
     <string name="menu_item5">Menü</string>
 
+    <string name="urunlertitle">ÜRÜNLERİM</string>
+    <string name="siparistitle">SİPARİŞLER</string>
+    <string name="tekliftitle">TEKLİFLER</string>
+    <string name="mesajtitle">MESAJLAR</string>
+    <string name="menutitle">MENÜ</string>
+
     <string name="giris">Giriş Yap</string>
     <string name="kayit">Kayıt Ol</string>
     <string name="kayitlieposta">Kayıtlı E-posta Adresiniz</string>
@@ -44,7 +50,13 @@
 
     <string name="splashtext3">FİMAK Döner Arabalı Ekmek Fırınının başlıca özelliği eşit ısı dağılımı, yüksek verimle çalışması ve düzenli sirkülasyonudur. Yüksek verimi iyi tasarlanmış ısı eşanjörleriyle (ısı değiştiricisi) sağlanmaktadır.</string>
 
+    <string name="detailtext">
+    FİMAK Döner Arabalı Ekmek Fırınının başlıca özelliği eşit ısı dağılımı, yüksek verimle çalışması ve düzenli sirkülasyonudur.
 
+    Yüksek verimi iyi tasarlanmış ısı eşanjörleriyle (ısı değiştiricisi) sağlanmaktadır. Bu sayede emsallerine göre daha az enerji ile istenilen özellikte ürün elde edilmesi sağlanır.
+
+    Yanma hücresi ısıya dayanıklı yüksek kalite paslanmaz çelikten imal edilmektedir. Çift yönlü kasetli buhar sistemi sayesinde yüksek seviyede buhar üretilip her tavanın yeterince beslenmesi sağlanmaktadır.
+</string>
     <!-- /Strings Menu Bottom Bar Navigation/ -->
     <string name="share_subject_for_hata">"SAUAR – 1.0.1 / Feedback"</string>
     <string name="notification_badge">9</string>

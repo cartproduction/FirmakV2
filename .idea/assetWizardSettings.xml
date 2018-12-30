@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="d0d0d0" />
+                                                <entry key="color" value="ed1b25" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_fiber_manual_record_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/hardware/ic_keyboard_arrow_left_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -55,11 +55,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="backgroundColor" value="d0d0d0" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="C:\Users\se\Desktop\images\imgProducts@3x.png" />
-                                      <entry key="outputName" value="products" />
+                                      <entry key="imageAsset" value="C:\Users\se\Desktop\images\pdfIcon@3x.png" />
+                                      <entry key="outputName" value="back" />
                                     </map>
                                   </option>
                                 </PersistentState>

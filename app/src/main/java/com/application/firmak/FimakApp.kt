@@ -82,6 +82,17 @@ class FimakApp : Application() {
             ft.replace(R.id.rootView, fragment, tag)
             ft.commitAllowingStateLoss()
         }
+
+        fun addMainFragment(fragmentManager: FragmentManager, fragment: Fragment, addToBackStack: Boolean, tag: String) {
+            val manager = fragmentManager
+            val ft = manager.beginTransaction()
+
+            if (addToBackStack) {
+                ft.addToBackStack(tag)
+            }
+            ft.replace(R.id.framelayout, fragment, tag)
+            ft.commitAllowingStateLoss()
+        }
     }
 
 }
