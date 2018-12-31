@@ -42,6 +42,14 @@
 
     <string name="onaybekleyen">ONAYIMI BEKLEYENLER</string>
     <string name="onayladiklarim">ONAYLADIKLARIM</string>
+    <string name="urunekle">Ürün Ekle..</string>
+    <string name="urunler">ÜRÜNLER</string>
+    <string name="odemeturu">ÖDEME TÜRÜ</string>
+
+    <string name="ozet">TEKLİF ÖZETİ</string>
+
+    <string name="text">Toplam 4 Adet Ürün
+    Öngörülen teslim tarihi: 01.04.2018</string>
 
     <string name="splashtext1">FİMAK Döner Arabalı Ekmek Fırınının başlıca özelliği eşit ısı dağılımı, yüksek verimle çalışması ve düzenli sirkülasyonudur. Yüksek verimi iyi tasarlanmış ısı eşanjörleriyle (ısı değiştiricisi) sağlanmaktadır. Bu sayede emsallerine göre daha az enerji ile istenilen özellikte ürün elde edilmesi sağlanır.
 

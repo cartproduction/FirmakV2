@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <iammert.com.expandablelib.ExpandableLayout
@@ -11,11 +12,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:parentLayout="@layout/layout_header"
-        app:childLayout="@layout/layout_child"/>
+        app:childLayout="@layout/summary_child"/>
 
     <iammert.com.expandablelib.ExpandableLayout
         android:id="@+id/onayladigim"
-        android:layout_below="@+id/onaybekleyen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
@@ -23,5 +23,17 @@
         app:parentLayout="@layout/layout_header"
         app:childLayout="@layout/layout_child"/>
 
+    <include layout="@layout/summarryoffer" />
 
-</RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/docs2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>

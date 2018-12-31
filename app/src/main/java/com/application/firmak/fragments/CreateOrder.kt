@@ -9,8 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.application.firmak.FimakApp.Companion.addMainFragment
-import com.application.firmak.adapters.OffersRecyclerViewAdapter
+import com.application.firmak.adapters.CreateOrderRecyclerViewAdapter
 import com.application.firmak.adapters.OrdersRecyclerViewAdapter
+import com.application.firmak.adapters.PaidTypeRecyclerViewAdapter
 import iammert.com.expandablelib.ExpandableLayout
 import iammert.com.expandablelib.Section
 import kotlinx.android.synthetic.main.layout_child.view.*
@@ -19,21 +20,22 @@ import kotlinx.android.synthetic.main.urunlerim.*
 import com.application.firmak.models.ProductItem
 import com.squareup.picasso.Picasso
 import iammert.com.expandablelib.ExpandCollapseListener
-import kotlinx.android.synthetic.main.offers.*
+import kotlinx.android.synthetic.main.createorder.*
+import kotlinx.android.synthetic.main.createorderview.view.*
 
 
-class Offers: Fragment() {
+class CreateOrder: Fragment() {
 
     private var onaybekleyenproductArray: ArrayList<ProductItem> = ArrayList<ProductItem>()
-    private var onaybekleyenproductAdapter: OffersRecyclerViewAdapter? = null
+    private var onaybekleyenproductAdapter: CreateOrderRecyclerViewAdapter? = null
 
     private var onayladigimproductArray: ArrayList<ProductItem> = ArrayList<ProductItem>()
-    private var onayladigimproductAdapter: OffersRecyclerViewAdapter? = null
+    private var onayladigimproductAdapter: PaidTypeRecyclerViewAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
-        return inflater!!.inflate(R.layout.offers, container, false)
+        return inflater.inflate(R.layout.createorder, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,11 +44,13 @@ class Offers: Fragment() {
     }
 
     private fun initExpandableLayouts() {
-        onaybekleyen.setRenderer(object : ExpandableLayout.Renderer<String, String> {
+
+
+        createdorders.setRenderer(object : ExpandableLayout.Renderer<String, String> {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
 
-                view.tvParent.setText(R.string.onaybekleyen)
-                Picasso.with(context).load(R.mipmap.timeicon).into(view.imageView11)
+                view.tvParent.setText(R.string.urunler)
+                Picasso.with(context).load(R.mipmap.folder).into(view.imageView11)
                 if(isExpanded)
                     Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
                 else
@@ -55,14 +59,14 @@ class Offers: Fragment() {
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {
 
-                val item1 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                val item2 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item1 = ProductItem("Estone 300", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.estone, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item2 = ProductItem("Rokon", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.rokon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                 onaybekleyenproductArray.clear()
                 onaybekleyenproductArray.add(item1)
                 onaybekleyenproductArray.add(item2)
 
                 view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onaybekleyenproductAdapter = OffersRecyclerViewAdapter(onaybekleyenproductArray, requireContext())
+                onaybekleyenproductAdapter = CreateOrderRecyclerViewAdapter(onaybekleyenproductArray, requireContext())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = onaybekleyenproductAdapter
@@ -70,17 +74,18 @@ class Offers: Fragment() {
                 ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
                     addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
                 }
-
+                Picasso.with(context).load(R.mipmap.buttonadd).into(view.imageView)
+                view.textView2.setText(getString(R.string.urunekle))
 
             }
         })
 
-        onaybekleyen.setExpandListener(ExpandCollapseListener.ExpandListener<Any> { parentIndex, parent, view ->
+        createdorders.setExpandListener(ExpandCollapseListener.ExpandListener<Any> { parentIndex, parent, view ->
             Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
 
         })
 
-        onaybekleyen.setCollapseListener(ExpandCollapseListener.CollapseListener<Any> { parentIndex, parent, view ->
+        createdorders.setCollapseListener(ExpandCollapseListener.CollapseListener<Any> { parentIndex, parent, view ->
             Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
         })
 
@@ -91,13 +96,13 @@ class Offers: Fragment() {
         onaybekleyensection.parent = onaybekleyenparent
         onaybekleyensection.children.add(onaybekleyenchild)
         onaybekleyensection.expanded = true
-        onaybekleyen.addSection(onaybekleyensection)
+        createdorders.addSection(onaybekleyensection)
 
-        onayladigim.setRenderer(object : ExpandableLayout.Renderer<String, String> {
+        odemeturu.setRenderer(object : ExpandableLayout.Renderer<String, String> {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
 
-                view.tvParent.setText(R.string.onayladiklarim)
-                Picasso.with(context).load(R.mipmap.onay).into(view.imageView11)
+                view.tvParent.setText(R.string.odemeturu)
+                Picasso.with(context).load(R.mipmap.folder).into(view.imageView11)
                 if(isExpanded)
                     Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
                 else
@@ -106,14 +111,14 @@ class Offers: Fragment() {
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {
 
-                val item1 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                val item2 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item1 = ProductItem("Nakit", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.circle, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item2 = ProductItem("Kredi Kartı", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.checked, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                 onayladigimproductArray.clear()
                 onayladigimproductArray.add(item1)
                 onayladigimproductArray.add(item2)
 
                 view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onayladigimproductAdapter = OffersRecyclerViewAdapter(onayladigimproductArray, requireContext())
+                onayladigimproductAdapter = PaidTypeRecyclerViewAdapter(onayladigimproductArray, requireContext())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = onayladigimproductAdapter
@@ -126,12 +131,12 @@ class Offers: Fragment() {
             }
         })
 
-        onayladigim.setExpandListener(ExpandCollapseListener.ExpandListener<Any> { parentIndex, parent, view ->
+        odemeturu.setExpandListener(ExpandCollapseListener.ExpandListener<Any> { parentIndex, parent, view ->
             Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
 
         })
 
-        onayladigim.setCollapseListener(ExpandCollapseListener.CollapseListener<Any> { parentIndex, parent, view ->
+        odemeturu.setCollapseListener(ExpandCollapseListener.CollapseListener<Any> { parentIndex, parent, view ->
             Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
         })
 
@@ -142,7 +147,7 @@ class Offers: Fragment() {
         onayladigimsection.parent = onayladigimparent
         onayladigimsection.children.add(onayladigimchild)
         onayladigimsection.expanded = true
-        onayladigim.addSection(onayladigimsection)
+        odemeturu.addSection(onayladigimsection)
 
 
     }

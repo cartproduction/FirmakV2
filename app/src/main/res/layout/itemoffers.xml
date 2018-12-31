@@ -90,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/white"
-        android:elevation="1dp">
+        android:elevation="2dp">
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline4"
@@ -160,7 +160,6 @@
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
             android:layout_marginTop="4dp"
             android:text="TextView"
             android:textSize="10dp"
@@ -172,13 +171,25 @@
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_height="0dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/guideline4"
+            app:layout_constraintRight_toLeftOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/dateoffers"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textSize="10dp"
             app:layout_constraintBottom_toTopOf="@+id/center"
-            app:layout_constraintRight_toLeftOf="@id/guideline2" />
+            app:layout_constraintRight_toLeftOf="@id/guideline2"
+            android:layout_marginBottom="8dp" />
 
         <ImageView
             android:id="@+id/imageView13"
@@ -191,6 +202,6 @@
             app:layout_constraintRight_toLeftOf="@id/guideline2"
             app:srcCompat="@mipmap/righticon" />
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </com.daimajia.swipe.SwipeLayout>

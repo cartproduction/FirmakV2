@@ -5,17 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <iammert.com.expandablelib.ExpandableLayout
-        android:id="@+id/onaybekleyen"
+        android:id="@+id/createdorders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:parentLayout="@layout/layout_header"
-        app:childLayout="@layout/layout_child"/>
+        app:childLayout="@layout/createorderlayout_child"/>
 
     <iammert.com.expandablelib.ExpandableLayout
-        android:id="@+id/onayladigim"
-        android:layout_below="@+id/onaybekleyen"
+        android:id="@+id/odemeturu"
+        android:layout_below="@+id/createdorders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"

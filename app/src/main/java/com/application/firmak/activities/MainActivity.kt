@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                         apptitle_text.setText(R.string.tekliftitle)
                     }
                     R.id.menu_item4 -> {
-                        selectedFragment = Fragment4()
+                        selectedFragment = OffersSummary()
                         BottomNavigationViewHelper.removeBadge(bottomNavigationView, this, 3)
                         apptitle_text.setText(R.string.mesajtitle)
                     }

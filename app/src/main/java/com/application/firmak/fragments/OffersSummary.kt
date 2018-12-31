@@ -9,67 +9,53 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.application.firmak.FimakApp.Companion.addMainFragment
+import com.application.firmak.adapters.DocsRecyclerViewAdapter
+import com.application.firmak.adapters.OfferSummaryRecyclerViewAdapter
 import com.application.firmak.adapters.OffersRecyclerViewAdapter
 import com.application.firmak.adapters.OrdersRecyclerViewAdapter
 import iammert.com.expandablelib.ExpandableLayout
 import iammert.com.expandablelib.Section
-import kotlinx.android.synthetic.main.layout_child.view.*
-import kotlinx.android.synthetic.main.layout_header.view.*
 import kotlinx.android.synthetic.main.urunlerim.*
 import com.application.firmak.models.ProductItem
 import com.squareup.picasso.Picasso
 import iammert.com.expandablelib.ExpandCollapseListener
-import kotlinx.android.synthetic.main.offers.*
+import kotlinx.android.synthetic.main.layout_child.view.*
+import kotlinx.android.synthetic.main.layout_header.view.*
+import kotlinx.android.synthetic.main.offerssummary.*
+import kotlinx.android.synthetic.main.summary_child.view.*
 
+class OffersSummary: Fragment() {
 
-class Offers: Fragment() {
-
-    private var onaybekleyenproductArray: ArrayList<ProductItem> = ArrayList<ProductItem>()
-    private var onaybekleyenproductAdapter: OffersRecyclerViewAdapter? = null
-
+    private var productArray: ArrayList<ProductItem> = ArrayList<ProductItem>()
+    private var productAdapter: DocsRecyclerViewAdapter? = null
     private var onayladigimproductArray: ArrayList<ProductItem> = ArrayList<ProductItem>()
-    private var onayladigimproductAdapter: OffersRecyclerViewAdapter? = null
+    private var onayladigimproductAdapter: OfferSummaryRecyclerViewAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
-        return inflater!!.inflate(R.layout.offers, container, false)
+        return inflater.inflate(R.layout.offerssummary, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         initExpandableLayouts()
+        initMenuRecycleView()
     }
 
     private fun initExpandableLayouts() {
         onaybekleyen.setRenderer(object : ExpandableLayout.Renderer<String, String> {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
 
-                view.tvParent.setText(R.string.onaybekleyen)
-                Picasso.with(context).load(R.mipmap.timeicon).into(view.imageView11)
-                if(isExpanded)
-                    Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
-                else
-                    Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
+                view.tvParent.setText(R.string.ozet)
             }
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {
 
-                val item1 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                val item2 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                onaybekleyenproductArray.clear()
-                onaybekleyenproductArray.add(item1)
-                onaybekleyenproductArray.add(item2)
 
-                view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onaybekleyenproductAdapter = OffersRecyclerViewAdapter(onaybekleyenproductArray, requireContext())
-                val gridLayoutManager = GridLayoutManager(requireContext(), 1)
-                view.createdordersrec.layoutManager = gridLayoutManager
-                view.createdordersrec.adapter = onaybekleyenproductAdapter
-
-                ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
-                    addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-                }
+                view.textView4.setText(R.string.text)
+                view.textView14.setText(R.string.ozet)
+                view.dateoffers.setText(R.string.ozet)
 
 
             }
@@ -96,24 +82,19 @@ class Offers: Fragment() {
         onayladigim.setRenderer(object : ExpandableLayout.Renderer<String, String> {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
 
-                view.tvParent.setText(R.string.onayladiklarim)
-                Picasso.with(context).load(R.mipmap.onay).into(view.imageView11)
-                if(isExpanded)
-                    Picasso.with(context).load(R.mipmap.uppicon).into(view.imageView12)
-                else
-                    Picasso.with(context).load(R.mipmap.righticon).into(view.imageView12)
+                view.tvParent.setText(R.string.urunler)
             }
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {
 
-                val item1 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                val item2 = ProductItem("3 Adet Ürün", "50.000 TL", "Nakit", R.mipmap.ordericon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item1 = ProductItem("Estone 300", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.estone, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                val item2 = ProductItem("Rokon", "3 Katlı, Mayalandırma Odalı, Dijital Panel, Hava Klapesi, Sİyah Ön Görünüm, Davlumbaz.", "02.03.2018", R.mipmap.rokon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                 onayladigimproductArray.clear()
                 onayladigimproductArray.add(item1)
                 onayladigimproductArray.add(item2)
 
                 view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onayladigimproductAdapter = OffersRecyclerViewAdapter(onayladigimproductArray, requireContext())
+                onayladigimproductAdapter = OfferSummaryRecyclerViewAdapter(onayladigimproductArray, requireContext())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = onayladigimproductAdapter
@@ -144,6 +125,28 @@ class Offers: Fragment() {
         onayladigimsection.expanded = true
         onayladigim.addSection(onayladigimsection)
 
+
+    }
+
+    private fun initMenuRecycleView() {
+
+        /*val lp2 = imageView.layoutParams as ViewGroup.LayoutParams
+        lp2.height = ApplicationClass.height / 2
+        lp2.width = ApplicationClass.width / 2
+        imageView.layoutParams = lp2*/
+
+        val item1 = ProductItem("Teknik Dökümanı", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+        val item2 = ProductItem("Extra Aksesuar Dökümanı", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+        val item3 = ProductItem("Montaj Bilgileri", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+        productArray.clear()
+        productArray.add(item1)
+        productArray.add(item2)
+        productArray.add(item3)
+        docs2!!.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
+        productAdapter = DocsRecyclerViewAdapter(productArray, requireContext())
+        val gridLayoutManager = GridLayoutManager(requireContext(), 1)
+        docs2!!.layoutManager = gridLayoutManager
+        docs2!!.adapter = productAdapter
 
     }
 

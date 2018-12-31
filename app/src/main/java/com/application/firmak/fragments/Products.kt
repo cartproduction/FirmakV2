@@ -63,13 +63,13 @@ class Products: Fragment() {
                 teslimEdilecekproductArray.add(item1)
                 teslimEdilecekproductArray.add(item2)
 
-                view.teslimedilecek.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
+                view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
                 teslimEdilecekproductAdapter = TeslimEdilecekProductRecyclerViewAdapter(teslimEdilecekproductArray, requireContext())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
-                view.teslimedilecek.layoutManager = gridLayoutManager
-                view.teslimedilecek.adapter = teslimEdilecekproductAdapter
+                view.createdordersrec.layoutManager = gridLayoutManager
+                view.createdordersrec.adapter = teslimEdilecekproductAdapter
 
-                ItemClickSupport.addTo(view.teslimedilecek).setOnItemClickListener { recyclerView, position, v ->
+                ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
                     addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
                 }
 

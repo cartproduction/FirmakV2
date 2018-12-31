@@ -90,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/white"
-        android:elevation="1dp">
+        android:elevation="2dp">
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline4"
@@ -134,46 +134,34 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.66" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="40dp"
-            android:layout_height="42dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintRight_toLeftOf="@id/guideline1"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:text="TextView"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/center"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintLeft_toRightOf="@+id/guideline4"
-            app:layout_constraintRight_toLeftOf="@id/guideline3" />
-
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
-            android:layout_marginTop="4dp"
             android:text="TextView"
             android:textSize="10dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@+id/guideline4"
             app:layout_constraintRight_toLeftOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            tools:layout_editor_absoluteY="38dp" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="TextView"
+            android:textColor="@color/material_drawer_dark_selected"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/dateoffers"
+            app:layout_constraintRight_toLeftOf="@id/guideline2" />
+
+        <TextView
+            android:id="@+id/dateoffers"
+            android:layout_width="wrap_content"
+            android:layout_height="11dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textSize="10dp"
@@ -191,6 +179,6 @@
             app:layout_constraintRight_toLeftOf="@id/guideline2"
             app:srcCompat="@mipmap/righticon" />
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </com.daimajia.swipe.SwipeLayout>
