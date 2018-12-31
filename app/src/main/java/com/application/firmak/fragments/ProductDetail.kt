@@ -31,6 +31,11 @@ class ProductDetail: Fragment() {
 
     private fun initMenuRecycleView() {
 
+        /*val lp2 = imageView.layoutParams as ViewGroup.LayoutParams
+        lp2.height = ApplicationClass.height / 2
+        lp2.width = ApplicationClass.width / 2
+        imageView.layoutParams = lp2*/
+
         val item1 = ProductItem("Teknik Dökümanı", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
         val item2 = ProductItem("Extra Aksesuar Dökümanı", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)
         val item3 = ProductItem("Montaj Bilgileri", "", " ", R.mipmap.pdficon, R.mipmap.ic_launcher, R.mipmap.ic_launcher)

@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         initToolbar()
         initBottomNavigation()
 
@@ -44,11 +43,11 @@ class MainActivity : AppCompatActivity() {
                         apptitle_text.setText(R.string.urunlertitle)
                     }
                     R.id.menu_item2 -> {
-                        selectedFragment = Fragment2()
+                        selectedFragment = Orders()
                         apptitle_text.setText(R.string.siparistitle)
                     }
                     R.id.menu_item3 -> {
-                        selectedFragment = Fragment3()
+                        selectedFragment = Offers()
                         apptitle_text.setText(R.string.tekliftitle)
                     }
                     R.id.menu_item4 -> {

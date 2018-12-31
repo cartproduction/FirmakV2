@@ -31,10 +31,6 @@ class DocsRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, int
 
     override fun onBindViewHolder(holder: GroceryViewHolder, position: Int) {
 
-        val lp2 = holder.productimage.layoutParams as ViewGroup.LayoutParams
-        lp2.width = ApplicationClass.width / 2
-        holder.productimage.layoutParams = lp2
-
         Picasso.with(context).load(horizontalGrocderyList[position].profilePictureUrl!!).into(holder.productimage)
         holder.title.setText(horizontalGrocderyList[position].name)
         holder.badgeback.visibility = View.INVISIBLE
