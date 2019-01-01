@@ -50,6 +50,11 @@ class TeslimEdilecekProductRecyclerViewAdapter(val horizontalGrocderyList: List<
             ViewHelper.setScaleX(star, fraction + 0.6f)
             ViewHelper.setScaleY(star, fraction + 0.6f)
         })
+
+        holder.sample1.getSurfaceView().setOnClickListener(View.OnClickListener {
+
+
+        })
     }
 
     override fun getItemCount(): Int {

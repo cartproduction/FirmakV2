@@ -48,6 +48,12 @@ class OffersSummary: Fragment() {
             override fun renderParent(view: View, model: String, isExpanded: Boolean, parentPosition: Int) {
 
                 view.tvParent.setText(R.string.ozet)
+                view.imageView11.visibility = View.INVISIBLE
+                view.imageView12.visibility = View.INVISIBLE
+                view.sample1.getSurfaceView().setOnClickListener(View.OnClickListener {
+
+                    addMainFragment(requireFragmentManager(), PaymentPlan(), true, "PaymentPlan")
+                })
             }
 
             override fun renderChild(view: View, model: String, parentPosition: Int, childPosition: Int) {

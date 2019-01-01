@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/material_drawer_dark_selected"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_height="wrap_content"
+        android:text="Gürkan S. DİZDAR" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="gurkan.dizdar@solvepark.com" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="+90 532 100 56 47" />
+
+    <include layout="@layout/profilelayer" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/oldinputPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
+
+        <EditText
+            android:id="@+id/oldloginPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:hint="@string/yenisifrenew"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/white" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
+
+        <EditText
+            android:id="@+id/loginPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:hint="@string/yenisifrenew"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/white" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputPassConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
+
+        <EditText
+            android:id="@+id/loginPassConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/yenisifrecon"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/white" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="354dp"
+        android:layout_height="38dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorAccent"
+        android:text="@string/yenisifremsave"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

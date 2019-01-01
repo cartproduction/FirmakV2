@@ -62,14 +62,10 @@ class Offers: Fragment() {
                 onaybekleyenproductArray.add(item2)
 
                 view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onaybekleyenproductAdapter = OffersRecyclerViewAdapter(onaybekleyenproductArray, requireContext())
+                onaybekleyenproductAdapter = OffersRecyclerViewAdapter(onaybekleyenproductArray, requireContext(),requireFragmentManager())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = onaybekleyenproductAdapter
-
-                ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
-                    addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-                }
 
 
             }
@@ -113,14 +109,10 @@ class Offers: Fragment() {
                 onayladigimproductArray.add(item2)
 
                 view.createdordersrec.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
-                onayladigimproductAdapter = OffersRecyclerViewAdapter(onayladigimproductArray, requireContext())
+                onayladigimproductAdapter = OffersRecyclerViewAdapter(onayladigimproductArray,requireContext(),requireFragmentManager())
                 val gridLayoutManager = GridLayoutManager(requireContext(), 1)
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = onayladigimproductAdapter
-
-                ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
-                    addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-                }
 
 
             }

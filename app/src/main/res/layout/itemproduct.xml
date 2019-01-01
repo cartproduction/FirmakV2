@@ -44,23 +44,28 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
-        <ImageView
+        <TextView
             android:id="@+id/magnifier2"
-            android:src="@mipmap/ic_launcher"
+            android:text="Düzenle"
+            android:textSize="10dp"
             android:layout_width="70dp"
-            android:background="#f7e79c"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:background="@color/palegrey"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="35dp"
             android:layout_height="match_parent" />
 
-        <ImageView
+        <TextView
             android:id="@+id/star2"
-            android:src="@mipmap/ic_launcher"
+            android:text="Sil"
+            android:textSize="10dp"
             android:layout_width="70dp"
-            android:background="#4cd964"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:background="@color/strawberry"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="35dp"
             android:layout_height="match_parent" />
+
 
     </LinearLayout>
 

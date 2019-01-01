@@ -69,10 +69,6 @@ class Products: Fragment() {
                 view.createdordersrec.layoutManager = gridLayoutManager
                 view.createdordersrec.adapter = teslimEdilecekproductAdapter
 
-                ItemClickSupport.addTo(view.createdordersrec).setOnItemClickListener { recyclerView, position, v ->
-                    addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-                }
-
 
             }
         })
@@ -121,9 +117,6 @@ class Products: Fragment() {
         product!!.layoutManager = gridLayoutManager
         product!!.adapter = productAdapter
 
-        ItemClickSupport.addTo(product).setOnItemClickListener { product, position, v ->
-            addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-        }
 
     }
 

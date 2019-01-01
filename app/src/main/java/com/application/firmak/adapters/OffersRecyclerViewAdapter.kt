@@ -1,15 +1,18 @@
 package com.application.firmak.adapters
 
 import android.content.Context
+import android.support.v4.app.FragmentActivity
+import android.support.v4.app.FragmentManager
 import android.support.v7.widget.RecyclerView
-import android.text.style.StrikethroughSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.application.firmak.FimakApp.Companion.addMainFragment
+import com.application.firmak.OffersSummary
+import com.application.firmak.ProductDetail
 import com.application.firmak.models.ProductItem
 import com.application.firmak.R
 import com.application.firmak.span
@@ -18,7 +21,8 @@ import com.nineoldandroids.view.ViewHelper
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.itemoffers.view.*
 
-class OffersRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, internal var context: Context) : RecyclerView.Adapter<OffersRecyclerViewAdapter.GroceryViewHolder>() {
+
+class OffersRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, internal var context: Context,var fragmentManager: FragmentManager) : RecyclerView.Adapter<OffersRecyclerViewAdapter.GroceryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroceryViewHolder {
         //inflate the layout file
@@ -41,16 +45,18 @@ class OffersRecyclerViewAdapter(val horizontalGrocderyList: List<ProductItem>, i
         //holder.sample1.addDrag(SwipeLayout.DragEdge.Bottom, starBottView)
         holder.sample1.addRevealListener(R.id.delete, SwipeLayout.OnRevealListener { child, edge, fraction, distance -> })
 
-        holder.sample1.star2.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Star", Toast.LENGTH_SHORT).show() })
+        holder.sample1.star2.setOnClickListener(View.OnClickListener {
+            notifyItemRemoved(position)
+        })
 
-        holder.sample1.magnifier2.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Magnifier", Toast.LENGTH_SHORT).show() })
+        holder.sample1.magnifier2.setOnClickListener(View.OnClickListener {
+            Toast.makeText(context, "Magnifier", Toast.LENGTH_SHORT).show()
+        })
 
-        holder.sample1.addRevealListener(R.id.starbott, SwipeLayout.OnRevealListener { child, edge, fraction, distance ->
-            val star = child.star
-            val d = (child.height / 2 - star.getHeight() / 2).toFloat()
-            ViewHelper.setTranslationY(star, d * fraction)
-            ViewHelper.setScaleX(star, fraction + 0.6f)
-            ViewHelper.setScaleY(star, fraction + 0.6f)
+
+        holder.sample1.getSurfaceView().setOnClickListener(View.OnClickListener {
+
+            addMainFragment(fragmentManager, OffersSummary(), true, "OffersSummary")
         })
         
         

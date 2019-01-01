@@ -54,9 +54,6 @@ class Orders: Fragment() {
         orders!!.layoutManager = gridLayoutManager
         orders!!.adapter = productAdapter
 
-        ItemClickSupport.addTo(orders).setOnItemClickListener { product, position, v ->
-            addMainFragment(requireFragmentManager(),ProductDetail(), true, "ProductDetail")
-        }
 
     }
 

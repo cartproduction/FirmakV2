@@ -5,6 +5,8 @@
     <color name="colorAccent">#ed1b25</color>
     <color name="badge">#f89406</color>
     <color name="steel">#8e8e93</color>
+    <color name="strawberry">#ee323b</color>
+    <color name="palegrey">#efeff4</color>
 
     <!-- MaterialDrawer DEFAULT DARK drawer colors -->
     <color name="material_drawer_dark_selected">#202020</color>

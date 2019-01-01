@@ -45,8 +45,10 @@ class OfferSummaryRecyclerViewAdapter(val horizontalGrocderyList: List<ProductIt
         //holder.sample1.addDrag(SwipeLayout.DragEdge.Bottom, starBottView)
         holder.sample1.addRevealListener(R.id.delete, SwipeLayout.OnRevealListener { child, edge, fraction, distance -> })
 
-        holder.sample1.star2.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Star", Toast.LENGTH_SHORT).show() })
-
+        holder.sample1.star2.setOnClickListener(View.OnClickListener {
+            holder.sample1.close()
+            notifyItemRemoved(position)
+        })
         holder.sample1.magnifier2.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Magnifier", Toast.LENGTH_SHORT).show() })
 
         holder.sample1.addRevealListener(R.id.starbott, SwipeLayout.OnRevealListener { child, edge, fraction, distance ->
@@ -58,6 +60,11 @@ class OfferSummaryRecyclerViewAdapter(val horizontalGrocderyList: List<ProductIt
         })
 
         holder.arrow.visibility = View.INVISIBLE
+
+        holder.sample1.getSurfaceView().setOnClickListener(View.OnClickListener {
+
+
+        })
         
         
     }
