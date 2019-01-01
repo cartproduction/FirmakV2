@@ -26,20 +26,18 @@ import com.application.firmak.ApplicationClass
 import com.application.firmak.CirclePageIndicator
 import com.application.firmak.R
 import com.appus.splash.Splash
+import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.viewpager_item.*
 
 
 class SplashActivity : AppCompatActivity() {
-    private var login: Button? = null
-    private val register: Button? = null
     private var isSliderAnimation = false
-    lateinit var viewPager: ViewPager
     lateinit var titleView: TextView
     lateinit var hintView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        login = findViewById<View>(R.id.login) as Button
         val window = window
         window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
@@ -58,9 +56,6 @@ class SplashActivity : AppCompatActivity() {
         splash.setSplashImage(newDrawable)
         splash.perform()
 
-        titleView = findViewById<View>(R.id.landing_txt_title) as TextView
-        hintView = findViewById<View>(R.id.landing_txt_hint) as TextView
-
         titleView.text = resources.obtainTypedArray(R.array.titles).getString(0)
         hintView.text = resources.obtainTypedArray(R.array.hints).getString(0)
 
@@ -71,18 +66,15 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }
 
+        pager.adapter = ViewPagerAdapter(R.array.icons)
 
-        viewPager = findViewById<View>(R.id.pager) as ViewPager
+        pager.setPageTransformer(true, CustomPageTransformer())
 
-        viewPager.adapter = ViewPagerAdapter(R.array.icons)
-
-        viewPager.setPageTransformer(true, CustomPageTransformer())
-
-        val lp = viewPager.layoutParams as ViewGroup.LayoutParams
+        val lp = pager.layoutParams as ViewGroup.LayoutParams
         lp.height = ApplicationClass.height / 3 * 2 - 100
-        viewPager.layoutParams = lp
+        pager.layoutParams = lp
 
-        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
             }
@@ -102,8 +94,7 @@ class SplashActivity : AppCompatActivity() {
             }
         })
 
-        val mIndicator = findViewById<View>(R.id.indicator) as CirclePageIndicator
-        mIndicator.setViewPager(viewPager)
+        indicator.setViewPager(pager)
 
 
     }
@@ -124,13 +115,11 @@ class SplashActivity : AppCompatActivity() {
 
             val itemView = layoutInflater.inflate(R.layout.viewpager_item, container, false)
 
-            val iconView = itemView.findViewById<View>(R.id.landing_img_slide) as ImageView
-
-            val lp = iconView.layoutParams as ViewGroup.LayoutParams
+            val lp = landing_img_slide.layoutParams as ViewGroup.LayoutParams
             lp.height = ApplicationClass.height / 3 * 2 - 100
-            iconView.layoutParams = lp
+            landing_img_slide.layoutParams = lp
 
-            iconView.setImageDrawable(icon)
+            landing_img_slide.setImageDrawable(icon)
 
             container.addView(itemView)
 

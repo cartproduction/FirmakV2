@@ -31,6 +31,13 @@
     <string name="sifrebos">Şifrenizi giriniz</string>
     <string name="kodbos">Kodu giriniz</string>
 
+
+    <string name="sifredegis">Şifremi Değiştir</string>
+    <string name="musteritems">Müşteri Temsilcim</string>
+    <string name="cikis">Çıkış Yap</string>
+
+
+
     <string name="yenisifre">Yeni Şifre Oluşturun</string>
     <string name="yenisifrenew">Yeni Şifre ***</string>
     <string name="yenisifrecon">Yeni Şifre Tekrar ***</string>
